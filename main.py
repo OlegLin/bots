@@ -19,7 +19,7 @@ def start(message):
     adress = types.KeyboardButton("Адрес")
     youbot = types.KeyboardButton("Отзывы")
     markup.add(price, contact, games, adress, youbot)
-    client.send_message(778064702, f"{count} {len(set(idd))}")
+    client.send_message(778064702, f"Запуск: {count} новых людей: {len(set(idd))}")
     client.send_message(message.chat.id, "Что бы вы хотели узнать?", reply_markup=markup)
 
 @client.message_handler(content_types=['text'])
@@ -42,7 +42,7 @@ def vr_change(message):
         elif message.text == "Игры":
             markup = types.InlineKeyboardMarkup()
             markup.add(types.InlineKeyboardButton(">>>Наш Telegram канал<<<", url="https://t.me/vrushee"))
-            client.send_message(message.chat.id, "Все игры на телеграм канале ", reply_markup=markup)
+            client.send_message(message.chat.id, "Все игры на нашем телеграм канале ", reply_markup=markup)
 
 
         elif message.text == "Отзывы":
